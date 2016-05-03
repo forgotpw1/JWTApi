@@ -17,10 +17,10 @@ gem 'rake', '~> 0.9.6'
 # $ rhc env set BUNDLE_WITHOUT="development test postgresql"
 #
 group :development, :test do
-  gem 'sqlite3'
-  gem 'minitest'
-  gem 'thor'
+  gem 'pg'
+  gem 'rspec-rails', '~> 3.0'
 end
+
 
 # Add support for the MySQL
 group :production, :mysql do
@@ -58,7 +58,7 @@ gem 'spring',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
