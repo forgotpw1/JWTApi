@@ -5,9 +5,9 @@
         "description": "JWT Enabled API - mrbarrettgriffith@gmail.com",
         "version": "1.0.0"
     },
-    "host": "104.131.34.127:9073",
+    "host": "foundationlabtest-bgtech.rhcloud.com",
     "schemes": [
-        "https"
+        "http"
     ],
     "basePath": "/api/v1",
     "produces": [
