@@ -18,6 +18,8 @@ gem 'rake', '~> 0.9.6'
 #
 group :development, :test do
   gem 'pg'
+  gem 'byebug'
+  gem 'dotenv-rails' 
   gem 'rspec-rails', '~> 3.0'
 end
 

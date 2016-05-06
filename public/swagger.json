@@ -1,0 +1,90 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Project Raven API",
+        "description": "JWT Enabled API - mrbarrettgriffith@gmail.com",
+        "version": "1.0.0"
+    },
+    "host": "104.131.34.127:9073",
+    "schemes": [
+        "https"
+    ],
+    "basePath": "/api/v1",
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/account/register": {
+            "post": {
+                "summary": "Register User Accounts",
+                "description": "The '/account/register' end point receives post requests to register \nuser accounts with a name, email and password.\n",
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "description": "User's name to register and log in to the system",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "User's email",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "User's password",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Registration"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Session object with JWT",
+                        "schema": {
+                            "$ref": "#/definitions/Session"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Session": {
+            "type": "object",
+            "properties": {
+                "jwt": {
+                    "type": "string",
+                    "description": "JWT for requests requiring authentication"
+                }
+            }
+        },
+        "Error": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "fields": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,2 @@
+class AccountError < StandardError
+end
