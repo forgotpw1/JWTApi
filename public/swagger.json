@@ -21,21 +21,21 @@
                 "parameters": [
                     {
                         "name": "username",
-                        "in": "query",
+                        "in": "data",
                         "description": "User's name to register and log in to the system",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "name": "email",
-                        "in": "query",
+                        "in": "data",
                         "description": "User's email",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "name": "password",
-                        "in": "query",
+                        "in": "data",
                         "description": "User's password",
                         "required": true,
                         "type": "string"
@@ -43,6 +43,45 @@
                 ],
                 "tags": [
                     "Registration"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Session object with JWT",
+                        "schema": {
+                            "$ref": "#/definitions/Session"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/account/login": {
+            "post": {
+                "summary": "Account Login",
+                "description": "The '/account/login' end point receives post requests to login with a  username and password.",
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "data",
+                        "description": "User's name to log in to the system",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "data",
+                        "description": "User's password",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Login"
                 ],
                 "responses": {
                     "200": {
