@@ -4,17 +4,17 @@ module API
     describe "Account registration API", :type => :request  do
       let(:encryption_service) { ActiveSupport::MessageEncryptor.new(ENV["CRYPTO_KEY"])  }
       it "should reject Missing Parameters" do
-	post "/api/v1/account/register", data: {
+	post "/api/v1/account/register", {
 #	  username: "FredFlintstone",
 	  email: "fred@example.com",
 	  password: "abcdefg"
 	}
 
-	expect(response.status).to equal(422)
+	expect(response.status).to eq(422)
       end
       
       it "should return a success upon sending valid parameters" do
-	post "/api/v1/account/register", data: {
+	post "/api/v1/account/register", {
 	  username: "FredFlintstone",
 	  email: "fred@example.com",
 	  password: "abcdefg"
@@ -32,7 +32,7 @@ module API
 
 	}, encryption_service)
 	manager.register
-	post "/api/v1/account/register", data: {
+	post "/api/v1/account/register", {
 	  username: "FredFlintstone",
 	  email: "fred@example.com",
 	  password: "abcdefg"
