@@ -21,7 +21,7 @@
                 "parameters": [
                     {
                         "name": "username",
-                        "in": "query,
+                        "in": "query",
                         "description": "User's name to register and log in to the system",
                         "required": true,
                         "type": "string"
