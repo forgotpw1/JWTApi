@@ -21,21 +21,21 @@
                 "parameters": [
                     {
                         "name": "username",
-                        "in": "data",
+                        "in": "query,
                         "description": "User's name to register and log in to the system",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "name": "email",
-                        "in": "data",
+                        "in": "query",
                         "description": "User's email",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "name": "password",
-                        "in": "data",
+                        "in": "query",
                         "description": "User's password",
                         "required": true,
                         "type": "string"
@@ -67,14 +67,14 @@
                 "parameters": [
                     {
                         "name": "username",
-                        "in": "data",
+                        "in": "query",
                         "description": "User's name to log in to the system",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "name": "password",
-                        "in": "data",
+                        "in": "query",
                         "description": "User's password",
                         "required": true,
                         "type": "string"
