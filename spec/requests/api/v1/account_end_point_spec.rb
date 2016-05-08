@@ -42,4 +42,34 @@ module API
       end
     end
   end
+
+  describe "Account login end point", type: :request do
+    let(:encryption_service) { ActiveSupport::MessageEncryptor.new(ENV["CRYPTO_KEY"])  }
+    before do
+      manager = AccountManager.new({
+	username: "FredFlintstone",
+	email: "fred@example.com",
+	password: "abcdefg"
+
+      }, encryption_service)
+      manager.register
+    end
+    it "should return a JWT on a successful login" do
+	    
+	post "/api/v1/account/login", {
+	  username: "FredFlintstone",
+	  password: "abcdefg"
+	}
+	expect(JSON.parse(response.body)['jwt']).to_not eq(nil)
+    end
+
+    it "should error on an invalid login" do
+	post "/api/v1/account/login", {
+	  username: "FredFlintstone",
+	  password: "123456"
+	}
+	expect(response.status).to eq(422)
+
+    end
+  end 
 end
