@@ -1,11 +1,11 @@
 {
     "swagger": "2.0",
     "info": {
-        "title": "Project Raven API",
+        "title": "JWT API",
         "description": "JWT Enabled API - mrbarrettgriffith@gmail.com",
         "version": "1.0.0"
     },
-    "host": "foundationlabtest-bgtech.rhcloud.com",
+    "host": "jwt-bgtech.rhcloud.com",
     "schemes": [
         "http"
     ],
