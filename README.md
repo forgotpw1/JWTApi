@@ -1,6 +1,6 @@
 # JWT API
 
-This is a simple starter app for an API that utilizes JWT (http://jwt.io) to establish client server communication. 
+This is a simple example API using JWT for client/server communication.
 
 License
 -------
